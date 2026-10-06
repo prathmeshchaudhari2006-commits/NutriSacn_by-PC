@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --primary: 158 64% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 30% 94%;
+    --secondary-foreground: 160 70% 15%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 40%;
+    --border: 220 13% 91%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 213 31% 96%;
+    --primary: 158 64% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 30% 12%;
+    --secondary-foreground: 160 60% 85%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    --border: 216 34% 17%;
+  }
+}
+
+body {
+  background-color: #0d131f;
+  color: #f1f5f9;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+}
+
+.glow-teal {
+  box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.3);
+}
+
+/* Custom laser scan line animation */
+@keyframes scanline {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 95%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.animate-scanline {
+  animation: scanline 2.5s ease-in-out infinite;
+}
+
+/* Custom pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
